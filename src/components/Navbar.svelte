@@ -1,45 +1,43 @@
-<div class="navbar bg-base-100 shadow-sm">
-	<div class="flex-1">
-		<a class="btn btn-ghost text-xl" aria-label="home" href="#home">Jaedon Smith</a>
+<div class="navbar bg-neutral-content sticky top-0 z-10">
+	<div class="ps-4">
+		<a class="text-lg font-bold">Jaedon Smith</a>
 	</div>
-	<div class="flex-none">
-		<ul class="menu menu-horizontal px-1">
+	<div class="flex grow justify-end px-2">
+		<ul class="md:menu md:menu-horizontal hidden px-1">
 			<li>
-				<a href="#about">About Me</a>
+				<a class="" href="#home">About Me</a>
 			</li>
 			<li>
-				<a href="#projects">Projects</a>
+				<a class="" href="#projects">Projects</a>
 			</li>
 			<li>
-				<a href="#skills">Skills</a>
+				<a class="" href="#skills">Skills</a>
 			</li>
 			<li>
-				<a href="#contacts">Contact</a>
-			</li>
-			<li>
-				<details>
-					<summary>Parent</summary>
-					<ul class="bg-base-100 rounded-t-none p-2">
-						<li><a>Link 1</a></li>
-						<li><a>Link 2</a></li>
-					</ul>
-				</details>
+				<a class="" href="#contacts">Contact</a>
 			</li>
 		</ul>
-		<button class="btn btn-square btn-ghost md:hidden" aria-label="dropdown">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				class="inline-block h-5 w-5 stroke-current"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-				></path>
-			</svg>
-		</button>
+		<div class="flex items-stretch">
+			<div class="dropdown dropdown-end md:hidden">
+				<div tabindex="0" role="button" class="btn btn-ghost rounded-field">Dropdown</div>
+				<ul
+					tabindex="0"
+					class="menu dropdown-content bg-neutral-content rounded-box z-1 mt-4 w-52 p-2 shadow-sm"
+				>
+					<li class="text-base-content">
+						<a class="" href="#home">About Me</a>
+					</li>
+					<li class="text-base-content">
+						<a class="" href="#projects">Projects</a>
+					</li>
+					<li class="text-base-content">
+						<a class="" href="#skills">Skills</a>
+					</li>
+					<li class="text-base-content">
+						<a class="" href="#contacts">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>

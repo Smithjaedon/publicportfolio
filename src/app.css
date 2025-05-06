@@ -2,3 +2,11 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @plugin 'daisyui';
+
+@theme {
+	--primarybg: #0d1321;
+	--accentbg: #1d2d44;
+	--brandbg: #3e5c76;
+	--secondarybg: #748cab;
+	--highlightbg: #f0ebd8;
+}
