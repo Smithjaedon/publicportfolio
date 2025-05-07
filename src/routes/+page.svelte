@@ -132,12 +132,14 @@
 
 	const handleSubject = (e) => {
 		const sub = e.target.name;
-		subject = sub;
+		const newSub = sub.replace(/ /g, '%20');
+		subject = newSub;
 	};
 
 	const handleMessage = (e) => {
 		const msg = e.target.name;
-		message = msg;
+		const newMsg = msg.replace(/ /g, '%20');
+		message = newMsg;
 	};
 </script>
 
@@ -153,13 +155,13 @@
 				adaptability and curiosity drive me to continuously expand my skill set and tackle any task
 				with enthusiasm.
 			</p>
-			<button class="btn btn-primary">Contact Me</button>
+			<a class="btn btn-primary" href="#contacts">Contact Me</a>
 		</div>
 	</div>
 </section>
 <section class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="mx-auto text-5xl font-bold">Projects</h2>
-	<div id="projects" class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
+	<div id="projects" class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
 		{#each projects as project}
 			<div class="card bg-base-300 w-96 shadow-md">
 				<figure>
@@ -186,7 +188,7 @@
 
 <section class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="text-5xl font-bold">Skills</h2>
-	<div id="skills" class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
+	<div id="skills" class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
 		<div class="flex items-center justify-center">
 			<div class="gap-y2 grid grid-cols-1 place-items-center gap-2 xl:grid-cols-3">
 				<div class="card card-lg bg-base-300 w-96 shadow-md">
@@ -250,11 +252,12 @@
 
 <section id="contacts" class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="text-5xl font-bold">Contact</h2>
-	<div class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
-		<form class="bg-base-300 container mx-auto w-100 max-w-sm space-y-4 rounded-lg p-6 shadow-md">
+	<div class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
+		<div class="bg-base-300 w-100 container mx-auto max-w-sm space-y-4 rounded-lg p-6 shadow-md">
 			<fieldset class="fieldset">
 				<legend class="fieldset-legend">Email</legend>
 				<input
+					name="email"
 					class="input validator"
 					type="email"
 					required
@@ -266,6 +269,7 @@
 			<fieldset class="fieldset">
 				<legend class="fieldset-legend">Subject</legend>
 				<input
+					name="subject"
 					type="text"
 					class="input"
 					placeholder="Enter Subject"
@@ -274,11 +278,18 @@
 			</fieldset>
 			<fieldset class="fieldset">
 				<legend class="fieldset-legend">Message</legend>
-				<textarea class="textarea" placeholder="Type Message" oninput={(e) => handleMessage(e)}
+				<textarea
+					name="message"
+					class="textarea"
+					placeholder="Type Message"
+					oninput={(e) => handleMessage(e)}
 				></textarea>
 			</fieldset>
-			<div><a class="btn btn-wide btn-primary mx-auto" href={`mailto:${email}`}>Contact Me</a></div>
-		</form>
+			<a
+				href={`mailto:${email}?subject=${subject}&body=${message}`}
+				class="btn btn-wide btn-primary mx-auto">Contact Me</a
+			>
+		</div>
 	</div>
 </section>
 <footer class="footer footer-center bg-base-300 text-base-content mt-10 p-10">
