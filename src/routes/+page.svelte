@@ -17,6 +17,7 @@
 	import github from '../assets/skills/GitHub-Mark-ea2971cee799.png';
 	import git from '../assets/skills/Git-Icon-1788C.png';
 	import node from '../assets/skills/images (1).png';
+	import port from '../assets/skills/port.png';
 
 	let projects = [
 		{
@@ -45,9 +46,10 @@
 		},
 		{
 			name: 'Current Portfolio Webiste',
+			imageURL: port,
 			description:
 				'A portfolio website built using SvelteKit and TailwindCSS. You are currently viewing it!',
-			link: 'https://weather-app-2-0.vercel.app/',
+			link: 'https://publicportfolio.vercel.app/',
 			badges: ['SvelteKit', 'TailwindCSS', 'JavaScript', 'Vite', 'Vercel']
 		},
 		{
