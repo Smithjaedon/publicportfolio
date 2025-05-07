@@ -181,6 +181,9 @@
 			</div>
 		{/each}
 	</div>
+	<div class="flex w-100 flex-wrap justify-center space-y-3 space-x-3 py-3">
+		<a class="btn btn-wide btn-primary" href="https://github.com/Smithjaedon">See More</a>
+	</div>
 </section>
 
 <section class="mt-10 flex flex-col items-center justify-center">
