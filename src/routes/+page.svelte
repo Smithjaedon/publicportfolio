@@ -1,8 +1,22 @@
-<script>
+<script lang="js">
 	import oldPort from '../assets/old_portfolio.png';
 	import algoAnimate from '../assets/algo_animate.png';
 	import pong from '../assets/pong.png';
 	import tictactoe from '../assets/tictactoe.png';
+	// skills
+	import css from '../assets/skills/CSS3_logo_and_wordmark.svg.png';
+	import html from '../assets/skills/HTML-5-Badge-Logo.png';
+	import js from '../assets/skills/JavaScript-logo.png';
+	import python from '../assets/skills/Python-logo-notext.svg.png';
+	import react from '../assets/skills/images.png';
+	import svelte from '../assets/skills/download.png';
+	import tailwind from '../assets/skills/30317862.png';
+	import typescript from '../assets/skills/Typescript.svg.png';
+	import vercel from '../assets/skills/vercel-icon-512x449-3422jidz.png';
+	import vite from '../assets/skills/images.jpeg';
+	import github from '../assets/skills/GitHub-Mark-ea2971cee799.png';
+	import git from '../assets/skills/Git-Icon-1788C.png';
+	import node from '../assets/skills/images (1).png';
 
 	let projects = [
 		{
@@ -49,63 +63,82 @@
 	let languages = [
 		{
 			name: 'JavaScript',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: js
 		},
 		{
 			name: 'Python',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: python
 		},
 		{
 			name: 'HTML5',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: html
 		},
 		{
 			name: 'Typescript',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: typescript
 		},
 		{
 			name: 'CSS3',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: css
 		}
 	];
 
 	let libraries = [
 		{
 			name: 'React',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: react
 		},
 		{
 			name: 'TailwindCSS',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: tailwind
 		},
 		{
 			name: 'Node.js',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: node
 		},
 		{
 			name: 'Svelte',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: svelte
 		},
 		{
 			name: 'Vite',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: vite
 		}
 	];
 
 	let tools = [
 		{
 			name: 'Git',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: git
 		},
 		{
 			name: 'GitHub',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: github
 		},
 		{
 			name: 'Vercel',
-			imageURL: 'https://img.daisyui.com/images/profile/demo/1@94.webp'
+			imageURL: vercel
 		}
 	];
+
+	let email = $state('');
+	let message = $state('');
+	let subject = $state('');
+
+	const handleEmail = (e) => {
+		const mail = e.target.name;
+		email = mail;
+	};
+
+	const handleSubject = (e) => {
+		const sub = e.target.name;
+		subject = sub;
+	};
+
+	const handleMessage = (e) => {
+		const msg = e.target.name;
+		message = msg;
+	};
 </script>
 
 <section id="home" class="hero min-h-screen">
@@ -126,7 +159,7 @@
 </section>
 <section class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="mx-auto text-5xl font-bold">Projects</h2>
-	<div id="projects" class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
+	<div id="projects" class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
 		{#each projects as project}
 			<div class="card bg-base-300 w-96 shadow-md">
 				<figure>
@@ -153,7 +186,7 @@
 
 <section class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="text-5xl font-bold">Skills</h2>
-	<div id="skills" class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
+	<div id="skills" class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
 		<div class="flex items-center justify-center">
 			<div class="gap-y2 grid grid-cols-1 place-items-center gap-2 xl:grid-cols-3">
 				<div class="card card-lg bg-base-300 w-96 shadow-md">
@@ -163,10 +196,7 @@
 							{#each languages as language}
 								<li class="list-row">
 									<div>
-										<img
-											class="rounded-box size-10"
-											src="https://img.daisyui.com/images/profile/demo/1@94.webp"
-										/>
+										<img class="rounded-box size-10 object-cover" src={language.imageURL} />
 									</div>
 									<div class="flex flex-col items-start justify-center">
 										<div class="text-xs font-semibold uppercase opacity-60">{language.name}</div>
@@ -184,10 +214,7 @@
 							{#each libraries as library}
 								<li class="list-row">
 									<div>
-										<img
-											class="rounded-box size-10"
-											src="https://img.daisyui.com/images/profile/demo/1@94.webp"
-										/>
+										<img class="rounded-box size-10 object-fill" src={library.imageURL} />
 									</div>
 									<div class="flex flex-col items-start justify-center">
 										<div class="text-xs font-semibold uppercase opacity-60">{library.name}</div>
@@ -205,10 +232,7 @@
 							{#each tools as tool}
 								<li class="list-row">
 									<div>
-										<img
-											class="rounded-box size-10"
-											src="https://img.daisyui.com/images/profile/demo/1@94.webp"
-										/>
+										<img class="rounded-box size-10 object-fill" src={tool.imageURL} />
 									</div>
 									<div class="flex flex-col items-start justify-center">
 										<div class="text-xs font-semibold uppercase opacity-60">{tool.name}</div>
@@ -224,7 +248,41 @@
 	</div>
 </section>
 
-<section class="flex items-center justify-center">
+<section id="contacts" class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="text-5xl font-bold">Contact</h2>
-	<div></div>
+	<div class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
+		<form class="bg-base-300 container mx-auto w-100 max-w-sm space-y-4 rounded-lg p-6 shadow-md">
+			<fieldset class="fieldset">
+				<legend class="fieldset-legend">Email</legend>
+				<input
+					class="input validator"
+					type="email"
+					required
+					placeholder="Enter Email"
+					oninput={(e) => handleEmail(e)}
+				/>
+				<div class="validator-hint">Enter valid email address</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="fieldset-legend">Subject</legend>
+				<input
+					type="text"
+					class="input"
+					placeholder="Enter Subject"
+					oninput={(e) => handleSubject(e)}
+				/>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="fieldset-legend">Message</legend>
+				<textarea class="textarea" placeholder="Type Message" oninput={(e) => handleMessage(e)}
+				></textarea>
+			</fieldset>
+			<div><a class="btn btn-wide btn-primary mx-auto" href={`mailto:${email}`}>Contact Me</a></div>
+		</form>
+	</div>
 </section>
+<footer class="footer footer-center bg-base-300 text-base-content mt-10 p-10">
+	<div>
+		<p>Copyright © 2025 - All right reserved by Jaedon Smith</p>
+	</div>
+</footer>
