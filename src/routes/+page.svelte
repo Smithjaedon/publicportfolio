@@ -126,20 +126,15 @@
 	let subject = $state('');
 
 	const handleEmail = (e) => {
-		const mail = e.target.name;
-		email = mail;
+		email = e.target.value;
 	};
 
 	const handleSubject = (e) => {
-		const sub = e.target.name;
-		const newSub = sub.replace(/ /g, '%20');
-		subject = newSub;
+		subject = encodeURIComponent(e.target.value);
 	};
 
 	const handleMessage = (e) => {
-		const msg = e.target.name;
-		const newMsg = msg.replace(/ /g, '%20');
-		message = newMsg;
+		message = encodeURIComponent(e.target.value);
 	};
 </script>
 
@@ -161,7 +156,7 @@
 </section>
 <section class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="mx-auto text-5xl font-bold">Projects</h2>
-	<div id="projects" class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
+	<div id="projects" class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
 		{#each projects as project}
 			<div class="card bg-base-300 w-96 shadow-md">
 				<figure>
@@ -188,7 +183,7 @@
 
 <section class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="text-5xl font-bold">Skills</h2>
-	<div id="skills" class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
+	<div id="skills" class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
 		<div class="flex items-center justify-center">
 			<div class="gap-y2 grid grid-cols-1 place-items-center gap-2 xl:grid-cols-3">
 				<div class="card card-lg bg-base-300 w-96 shadow-md">
@@ -252,8 +247,8 @@
 
 <section id="contacts" class="mt-10 flex flex-col items-center justify-center">
 	<h2 class="text-5xl font-bold">Contact</h2>
-	<div class="py-15 flex w-auto flex-wrap justify-center space-x-3 space-y-3">
-		<div class="bg-base-300 w-100 container mx-auto max-w-sm space-y-4 rounded-lg p-6 shadow-md">
+	<div class="flex w-auto flex-wrap justify-center space-y-3 space-x-3 py-15">
+		<div class="bg-base-300 container mx-auto w-100 max-w-sm space-y-4 rounded-lg p-6 shadow-md">
 			<fieldset class="fieldset">
 				<legend class="fieldset-legend">Email</legend>
 				<input
